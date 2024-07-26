@@ -1,0 +1,45 @@
+{
+  "name": "website-starter-pack",
+  "displayName": "Website Starter Pack",
+  "description": "A simple extension to create a new website project.",
+  "version": "0.0.1",
+  "publisher": "your-publisher-name",
+  "engines": {
+    "vscode": "^1.63.0"
+  },
+  "activationEvents": [
+    "onCommand:website-starter-pack.newProject",
+    "onCommand:website-starter-pack.newProjectFromContextMenu"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "website-starter-pack.newProject",
+        "title": "Create New Website Project"
+      },
+      {
+        "command": "website-starter-pack.newProjectFromContextMenu",
+        "title": "Create New Website Project"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "website-starter-pack.newProjectFromContextMenu",
+          "when": "newProjectSupported",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "echo \"No TypeScript compilation needed\"",
+    "watch": "echo \"No TypeScript watch needed\"",
+    "postinstall": "echo \"No postinstall script needed\""
+  },
+  "devDependencies": {
+    "vscode": "^1.1.37"
+  }
+}
